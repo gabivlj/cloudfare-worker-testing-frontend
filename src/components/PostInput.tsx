@@ -23,7 +23,6 @@ export default function PostInput({
   }
 
   function onSubmit(e: Event) {
-    console.log('eee');
     newPost({ ...postInput, id: 'optimistic' });
     setPostInput(Default);
   }
