@@ -4,7 +4,7 @@ export default class PostAPI {
   static uri: string = 'https://worker-backend.gabivlj.workers.dev/posts';
 
   static async getPosts(): Promise<Post[]> {
-    const response = await fetch(PostAPI.uri, { credentials: 'include' });
+    const response = await fetch(PostAPI.uri);
     const data = await response.json();
     return data as Post[];
   }
@@ -15,7 +15,6 @@ export default class PostAPI {
     const response = await fetch(PostAPI.uri, {
       method: 'POST',
       body: JSON.stringify(post),
-      credentials: 'include',
       headers: { 'Content-type': 'application/json' },
     });
     try {
